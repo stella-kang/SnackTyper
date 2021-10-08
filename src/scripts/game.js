@@ -65,6 +65,17 @@ export default class Game {
         this.strikes === 3;
     }
 
+    endGame() {
+        clearInterval(this.eventTimer);
+        this.timer.reset();
+        //render game over box
+    }
+
+    startGame() {
+        //add event listener for when player presses enter on splash
+        //make splash display: none;
+    }
+
     render() {
         this.snacks.renderKeys();
         this.snacks.renderOrder();
