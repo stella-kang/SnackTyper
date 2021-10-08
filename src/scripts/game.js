@@ -1,6 +1,7 @@
 import Level from "./level"
 import Snack from "./snack"
 import Input from "./input"
+import Timer from "./timer"
 
 export default class Game {
     constructor() {
@@ -10,18 +11,15 @@ export default class Game {
         this.inputs = new Input(this.level);
         this.score = 0;
         this.strikes = 0;
+        this.timer = new Timer();
         this.intervalCallback = this.nextLevel.bind(this);
     }
 
     start() {
         this.render();
         this.addListenerForInput();
-        this.timer = setInterval(this.intervalCallback, 5000)
-        // if (this.inputs.levelWon()) {
-        //     clearInterval(timer);
-        //     this.nextLevel();
-        //     timer = setInterval(this.intervalCallback, 5000);
-        // }
+        this.eventTimer = setInterval(this.intervalCallback, 5000)
+        this.timer.start(5);
     }
 
     addListenerForInput() {
@@ -31,9 +29,10 @@ export default class Game {
             e.preventDefault();
             that.inputs.checkInput(e.target.elements.value.value);
             if (that.level.won()) {
-                clearInterval(that.timer);
+                clearInterval(that.eventTimer);
+                that.timer.reset();
                 that.nextLevel();
-                that.timer = setInterval(that.intervalCallback, 5000);
+                that.eventTimer = setInterval(that.intervalCallback, 5000);
             }
         })
     }
@@ -56,6 +55,8 @@ export default class Game {
         this.level = new Level(this.levelNum);
         this.snacks = new Snack(this.level);
         this.inputs = new Input(this.level);
+        this.timer = new Timer();
+        this.timer.start(5);
         this.render();
     }
 
