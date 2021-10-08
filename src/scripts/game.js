@@ -31,8 +31,8 @@ export default class Game {
             if (that.level.won()) {
                 clearInterval(that.eventTimer);
                 that.timer.reset();
-                that.nextLevel();
                 that.eventTimer = setInterval(that.intervalCallback, 5000);
+                that.nextLevel();
             }
         })
     }
@@ -55,6 +55,7 @@ export default class Game {
         this.level = new Level(this.levelNum);
         this.snacks = new Snack(this.level);
         this.inputs = new Input(this.level);
+        this.timer.reset();
         this.timer = new Timer();
         this.timer.start(5);
         this.render();
@@ -68,5 +69,17 @@ export default class Game {
         this.snacks.renderKeys();
         this.snacks.renderOrder();
         this.snacks.addImages();
+        this.renderStrikes();
+        this.renderLevel();
+    }
+
+    renderStrikes() {
+        let counter = document.querySelector(".strike-count")
+        counter.innerHTML = `Strikes: ${this.strikes}`
+    }
+
+    renderLevel() {
+        let counter = document.querySelector(".level-count")
+        counter.innerHTML = `Level: ${this.levelNum}`
     }
 }

@@ -4,9 +4,12 @@ export default class Timer{
     }
 
     start(i) {
+        document.querySelector(".timer").innerHTML = i;
+        i--;
         this.interval = setInterval(function() {
             document.querySelector(".timer").innerHTML = i;
-            i===0 ? clearInterval(this.interval) : i--;
+            i--;
+            // debugger
         }, 1000);
     }
 
