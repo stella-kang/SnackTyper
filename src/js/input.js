@@ -1,24 +1,19 @@
+const { includes } = require("core-js/core/array");
+
 class Input {
     constructor(level) {
-        this.strings = [];
         this.level = level;
     }
 
-    addInput(arg) {
-        this.strings.push(arg);
-    }
-
-    levelComplete() {
-        this.level.strings.length === this.strings.length;
+    checkInput(arg) {
+        if (this.level.strings.includes(arg)) {
+            let index = this.level.strings.indexOf(arg);
+            this.level.strings.splice(index, 1);
+        }
     }
 
     levelWon() {
-        if (!this.levelComplete) return false;
-        let win = true;
-        this.strings.forEach(el => {
-            if (!this.level.strings.includes(el)) win = false;
-        })
-        return win;
+        this.level.strings.length === 0
     }
 }
 

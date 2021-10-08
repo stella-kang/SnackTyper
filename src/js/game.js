@@ -15,7 +15,7 @@ class Game {
     start() {
         this.addListenerForInput();
         let timer = setInterval(this.nextLevel(), 10000)
-        if (this.inputs.levelComplete()) {
+        if (this.inputs.Won()) {
             clearIntervanl(timer);
             this.nextLevel();
             timer = setInterval(this.nextLevel(), 10000);
@@ -25,7 +25,7 @@ class Game {
     addListenerForInput() {
         const input = document.querySelector("#input-form")
         input.addEventListener("submit", e => {
-            this.level.push(e.value);
+            this.inputs.checkInput(e.value);
         })
     }
 
