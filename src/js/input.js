@@ -1,21 +1,25 @@
 class Input {
-    constructor() {
+    constructor(level) {
         this.strings = [];
+        this.level = level;
     }
 
     addInput(arg) {
         this.strings.push(arg);
     }
 
-    levelComplete(level) {
-        level.strings.length === this.strings.length;
+    levelComplete() {
+        this.level.strings.length === this.strings.length;
     }
 
-    gamePass(level) {
-        let pass = true;
+    levelWon() {
+        if (!this.levelComplete) return false;
+        let win = true;
         this.strings.forEach(el => {
-            if (!level.strings.includes(el)) pass = false;
+            if (!this.level.strings.includes(el)) win = false;
         })
-        return pass;
+        return win;
     }
 }
+
+module.exports = Input;
