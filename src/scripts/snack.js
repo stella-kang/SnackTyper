@@ -1,20 +1,22 @@
 const Level = require("./level")
 
-const snacks = ["riceball", "dumpling", "chicken", "ramen", "peach", "steak"];
+const snacks = ["kimbap", "icecream", "sandwich", "pie", "dumpling", "taco"];
 class Snack {
     constructor(level) {
         this.level = level;
+
+        this.makeKeys();
     }
 
     makeKeys() {
         this.keys = [];
-        this.level.strings.forEach(el => {
+        this.level.answer.forEach(el => {
             let randomSnack = snacks[Math.floor(Math.random() * snacks.length)]
             this.keys.push([randomSnack, el])
         })
     }
 
-    render() { 
+    renderKeys() {
         this.keys.forEach(el => {
             let ul = document.createElement("ul");
             let firstLI = document.createElement("li");
@@ -24,6 +26,30 @@ class Snack {
             ul.appendChild(firstLI);
             ul.appendChild(secondLI);
             document.querySelector(".request").appendChild(ul);
+            add.push(el[0]);
+        })
+    }
+
+    getOrder() {
+        const foods = [];
+        this.level.answer.forEach(el1 => {
+            this.keys.forEach(el2 => {
+                if (el2[1] === el1) {
+                    foods.push(el2[0]);
+                }
+            })
+        })
+        return foods;
+    }
+
+    renderOrder() {
+        let foods = this.getOrder();
+        foods.forEach(el => {
+            let li = document.createElement("li");
+            li.id = el;
+            let ul = document.querySelector("key");
+            ul.appendChild(li);
+
         })
     }
 

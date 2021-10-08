@@ -13,9 +13,11 @@ class Game {
     }
 
     start() {
+        this.render();
+
         this.addListenerForInput();
         let timer = setInterval(this.nextLevel(), 10000)
-        if (this.inputs.Won()) {
+        if (this.inputs.levelWon()) {
             clearIntervanl(timer);
             this.nextLevel();
             timer = setInterval(this.nextLevel(), 10000);
@@ -43,6 +45,12 @@ class Game {
 
     gameOver() {
         this.strikes === 3;
+    }
+
+    render() {
+        this.snacks.renderKeys();
+        this.snacks.renderOrder();
+        this.snacks.addImages();
     }
 }
 
