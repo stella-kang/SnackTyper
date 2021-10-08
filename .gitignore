@@ -59,3 +59,4 @@ build-iPhoneSimulator/
 .gitignore
 *.json
 /node_modules/
+webpack.config.js
