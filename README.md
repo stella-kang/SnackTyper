@@ -16,7 +16,7 @@ In addition, the project will include:
 
 ## Wireframes
 <p align="center">
-    <img height="350px" src="assets/wireframe.png"></img>
+    <img height="350px" src="dist/assets/wireframe.png"></img>
 </p>
 
 - Nav Links will include a link to the project's Github repo, as well as a link to my LinkedIn profile
