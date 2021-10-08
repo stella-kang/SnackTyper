@@ -1,8 +1,8 @@
-const Level = require("./level")
-const Snack = require("./snack")
-const Input = require("./input")
+import Level from "./level"
+import Snack from "./snack"
+import Input from "./input"
 
-class Game {
+export default class Game {
     constructor() {
         this.levelNum = 1
         this.level = new Level(this.levelNum)
@@ -10,37 +10,53 @@ class Game {
         this.inputs = new Input(this.level);
         this.score = 0;
         this.strikes = 0;
+        this.intervalCallback = this.nextLevel.bind(this);
     }
 
     start() {
         this.render();
-
         this.addListenerForInput();
-        let timer = setInterval(this.nextLevel(), 10000)
-        if (this.inputs.levelWon()) {
-            clearIntervanl(timer);
-            this.nextLevel();
-            timer = setInterval(this.nextLevel(), 10000);
-        }
+        this.timer = setInterval(this.intervalCallback, 5000)
+        // if (this.inputs.levelWon()) {
+        //     clearInterval(timer);
+        //     this.nextLevel();
+        //     timer = setInterval(this.intervalCallback, 5000);
+        // }
     }
 
     addListenerForInput() {
         const input = document.querySelector("#input-form")
+        let that = this;
         input.addEventListener("submit", e => {
-            this.inputs.checkInput(e.value);
+            e.preventDefault();
+            that.inputs.checkInput(e.target.elements.value.value);
+            if (that.level.won()) {
+                clearInterval(that.timer);
+                that.nextLevel();
+                that.timer = setInterval(that.intervalCallback, 5000);
+            }
         })
     }
 
     nextLevel() {
-        this.levelNum += 1
-        this.level = new Level(this.levelNum);
-        this.snacks = new Snack(this.level);
-        this.inputs = new Input(this.level);
-        if (this.inputs.levelWon()) {
+        if (this.level.won()) {
             this.score += 1;
         } else {
             this.strikes += 1;
         }
+        let requestChildren = document.querySelector(".request").children
+        let keyChildren = document.querySelector(".key").children
+        for (let i = 0; i < requestChildren.length; i++) {
+            requestChildren[i].remove();
+        } 
+        for (let i = 0; i < keyChildren.length; i++) {
+            keyChildren[i].remove();
+        }
+        this.levelNum += 1
+        this.level = new Level(this.levelNum);
+        this.snacks = new Snack(this.level);
+        this.inputs = new Input(this.level);
+        this.render();
     }
 
     gameOver() {
@@ -53,5 +69,3 @@ class Game {
         this.snacks.addImages();
     }
 }
-
-module.exports = Game;

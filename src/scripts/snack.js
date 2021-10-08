@@ -1,16 +1,23 @@
-const Level = require("./level")
+import Level from "./level"
 
 const snacks = ["kimbap", "icecream", "sandwich", "pie", "dumpling", "taco"];
-class Snack {
+export default class Snack {
     constructor(level) {
         this.level = level;
+        // this.snacks = ["kimbap", "icecream", "sandwich", "pie", "dumpling", "taco"];
 
         this.makeKeys();
     }
 
     makeKeys() {
         this.keys = [];
+        const unique = [];
+
         this.level.answer.forEach(el => {
+            if (!unique.includes(el)) unique.push(el);
+        })
+
+        unique.forEach(el => {
             let randomSnack = snacks[Math.floor(Math.random() * snacks.length)]
             this.keys.push([randomSnack, el])
         })
@@ -25,8 +32,7 @@ class Snack {
             secondLI.innerText = el[1];
             ul.appendChild(firstLI);
             ul.appendChild(secondLI);
-            document.querySelector(".request").appendChild(ul);
-            add.push(el[0]);
+            document.querySelector(".key").appendChild(ul);
         })
     }
 
@@ -47,7 +53,7 @@ class Snack {
         foods.forEach(el => {
             let li = document.createElement("li");
             li.id = el;
-            let ul = document.querySelector("key");
+            let ul = document.querySelector(".request");
             ul.appendChild(li);
 
         })
@@ -64,5 +70,3 @@ class Snack {
         })
     }
 }
-
-module.exports = Snack;

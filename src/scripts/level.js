@@ -1,13 +1,19 @@
 const randomWord = require('random-words')
 
-class Level {
+export default class Level {
     constructor(num) {
         this.strings = this.buildStrings(num);
         this.answer = []
 
-        while (this.answer.length < this.strings.length) {
-            let randomString = strings[Math.floor(Math.random() * this.strings.legnth)]
-            this.answer.push(randomString);
+        if (this.strings.length === 1) {
+            this.answer.push(this.strings[0]);
+        } else if (this.answer.length < this.strings.length && this.strings.length < 7) {
+            while (this.answer.length < this.strings.length) {
+                let randomString = this.strings[Math.floor(Math.random() * this.strings.length)]
+                        this.answer.push(randomString);
+                    }
+        } else if (this.answers.lngth < this.strings.length) {
+            this.answer.push(this.answer[Math.floor(Math.random() * this.answer.length)])
         }
     }
 
@@ -24,6 +30,8 @@ class Level {
         }
         return next;
     }
-}
 
-module.exports = Level;
+    won() {
+        return this.answer.length === 0;
+    }
+}

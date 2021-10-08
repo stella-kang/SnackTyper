@@ -1,4 +1,4 @@
-const Game = require("./scripts/game")
+import Game from "./scripts/game"
 
 document.addEventListener("DOMContentLoaded", function() {
     const game = new Game();
