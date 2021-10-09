@@ -43,14 +43,16 @@ export default class Game {
         } else {
             this.strikes += 1;
         }
-        let requestChildren = document.querySelector(".request").children
-        let keyChildren = document.querySelector(".key").children
-        for (let i = 0; i < requestChildren.length; i++) {
-            requestChildren[i].remove();
-        } 
-        for (let i = 0; i < keyChildren.length; i++) {
-            keyChildren[i].remove();
-        }
+        // let requestChildren = document.querySelector(".request").children
+        // let keyChildren = document.querySelector(".key").children
+        // for (let i = 0; i < requestChildren.length; i++) {
+        //     requestChildren[0].remove();
+        // } 
+        // for (let i = 0; i < keyChildren.length; i++) {
+        //     keyChildren[0].remove();
+        // }
+        document.querySelector(".request").innerHTML = '';
+        document.querySelector(".key").innerHTML = '';
         this.levelNum += 1
         this.level = new Level(this.levelNum);
         this.snacks = new Snack(this.level);

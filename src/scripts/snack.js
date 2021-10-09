@@ -55,18 +55,29 @@ export default class Snack {
             li.id = el;
             let ul = document.querySelector(".request");
             ul.appendChild(li);
-
         })
     }
 
     addImages() {
         snacks.forEach(el => {
             let elements = document.querySelectorAll(`#${el}`);
-            elements.forEach(el => {
+            for (let i = 0; i < elements.length; i++) {
                 let img = document.createElement("img")
-                img.href = [];
-                el.appendChild(img)
-            })
+                if (elements[i].id === "kimbap") {
+                    img.src = "./dist/assets/kimbap.png"
+                } else if (elements[i].id === "icecream") {
+                    img.src = "./dist/assets/icecream.png"
+                } else if (elements[i].id === "sandwich") {
+                    img.src = "./dist/assets/sandwich.png"
+                } else if (elements[i].id === "pie") {
+                    img.src = "./dist/assets/pie.png"
+                } else if (elements[i].id === "dumpling") {
+                    img.src = "./dist/assets/dumpling.png"
+                } else if (elements[i].id === "taco") {
+                    img.src = "./dist/assets/taco.png"
+                };
+                elements[i].appendChild(img);
+            }
         })
     }
 }
