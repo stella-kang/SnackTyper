@@ -18,8 +18,8 @@ export default class Game {
     start() {
         this.render();
         this.addListenerForInput();
-        this.eventTimer = setInterval(this.intervalCallback, 5000)
-        this.timer.start(5);
+        this.eventTimer = setInterval(this.intervalCallback, 1000)
+        this.timer.start(1);
     }
 
     addListenerForInput() {
@@ -31,7 +31,7 @@ export default class Game {
             if (that.level.won()) {
                 clearInterval(that.eventTimer);
                 that.timer.reset();
-                that.eventTimer = setInterval(that.intervalCallback, 5000);
+                that.eventTimer = setInterval(that.intervalCallback, 1000);
                 that.nextLevel();
             }
         })
@@ -59,7 +59,7 @@ export default class Game {
         this.inputs = new Input(this.level);
         this.timer.reset();
         this.timer = new Timer();
-        this.timer.start(5);
+        this.timer.start(1);
         this.render();
     }
 

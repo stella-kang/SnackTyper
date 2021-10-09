@@ -31,7 +31,7 @@ export default class Level {
     buildStrings() {
         const result = [];
 
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 6; i++) {
             result.push(randomWord());
         }
         return result;
