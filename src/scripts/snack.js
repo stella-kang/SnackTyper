@@ -17,10 +17,9 @@ export default class Snack {
             if (!unique.includes(el)) unique.push(el);
         })
 
-        unique.forEach(el => {
-            let randomSnack = snacks[Math.floor(Math.random() * snacks.length)]
-            this.keys.push([randomSnack, el])
-        })
+        for (let i = 0; i < unique.length; i++) {
+            this.keys.push([snacks[i], unique[i]])
+        }
     }
 
     renderKeys() {

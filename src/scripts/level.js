@@ -22,9 +22,10 @@ export default class Level {
         //     }
         // }
 
-        while (this.answer.lnegth < num) {
+        while (this.answer.length < num) {
             this.answer.push(this.strings[Math.floor(Math.random() * this.strings.length)]);
         }
+        debugger
     }
 
     buildStrings() {
@@ -34,7 +35,6 @@ export default class Level {
             result.push(randomWord());
         }
         return result;
-        debugger
     }
 
     won() {
