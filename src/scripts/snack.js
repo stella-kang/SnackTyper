@@ -4,7 +4,6 @@ const snacks = ["kimbap", "icecream", "sandwich", "pie", "dumpling", "taco"];
 export default class Snack {
     constructor(level) {
         this.level = level;
-        // this.snacks = ["kimbap", "icecream", "sandwich", "pie", "dumpling", "taco"];
 
         this.makeKeys();
     }
