@@ -84,7 +84,7 @@ body {
   justify-content: space-between;
   font-family: "Sigmar One", cursive;
   font-size: 50px;
-  margin: 10px 20px 60px 20px;
+  margin: 10px 20px 40px 20px;
 }
 
 .timer {
@@ -94,6 +94,7 @@ body {
 .game-block-1 {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .request {
@@ -102,7 +103,7 @@ body {
   align-content: center;
   width: 60%;
   height: 100%;
-  margin: 20px;
+  margin: 20px 20px 120px 20px;
   padding: 20px;
   /* position: absolute; */
   background-color: white;
@@ -128,28 +129,29 @@ body {
 
 .key {
   display: flex;
-  width: 70%;
+  width: 68%;
 }
 
 .key > ul {
-  margin-left: 20px;
+  margin-left: 30px;
   text-align: center;
+  font-size: 25px;
 }
 
 #string-input {
+  outline: 3px solid #d7d7d7;
   border: none;
   width: 300px;
   height: 40px;
-  margin-top: 25px;
-}
-
-input[type=text] {
+  margin-top: px;
   font-size: 30px;
   font-family: "Indie Flower", cursive;
+  padding: 10px;
 }
 
-input[type=text]:focus {
-  outline: 3px solid #e05a00;
+#string-input:focus {
+  outline: 5px solid #e05a00;
+  border: none;
 }
 
 /* .break {
