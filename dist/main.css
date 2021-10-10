@@ -61,29 +61,98 @@ body {
   justify-content: center;
 }
 
+.hidden {
+  display: none;
+}
+
 .game-board {
-  display: flex;
+  /* display: flex; */
   margin-top: 100px;
   width: 70%;
-  height: 500px;
-  background-color: #e8ded1;
+  height: 100%;
+  background-color: #fff8e7;
+}
+
+.game {
+  font-family: "Indie Flower", cursive;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.counters {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Sigmar One", cursive;
+  font-size: 50px;
+  margin: 10px 20px 60px 20px;
+}
+
+.timer {
+  display: block;
+}
+
+.game-block-1 {
+  display: flex;
+  justify-content: space-between;
 }
 
 .request {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  width: 60%;
+  height: 100%;
+  margin: 20px;
+  padding: 20px;
+  /* position: absolute; */
+  background-color: white;
+  border: 5px dashed black;
+}
+
+#dog {
+  width: 40%;
+  height: 100%;
+}
+
+/* #request-box {
+    width: 60%;
+    height: 100%;
+    position: relative;
+} */
+.game-block-2 {
+  background-color: #f7cc9b;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .key {
   display: flex;
-  flex-wrap: wrap;
+  width: 70%;
 }
 
-.counters {
-  display: flex;
-  justify-content: space-between;
+.key > ul {
+  margin-left: 20px;
+  text-align: center;
 }
 
-.timer {
-  display: block;
+#string-input {
+  border: none;
+  width: 300px;
+  height: 40px;
+  margin-top: 25px;
 }
+
+input[type=text] {
+  font-size: 30px;
+  font-family: "Indie Flower", cursive;
+}
+
+input[type=text]:focus {
+  outline: 3px solid #e05a00;
+}
+
+/* .break {
+    flex-basis: 100%;
+    height: 0;
+} */

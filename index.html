@@ -5,33 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./dist/main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Sigmar+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/index.css" type="text/css">
     <title>SnackTyper</title>
 </head>
 <body>
     <div class="game-board">
         <div class="counters">
-        <div class="level-count">
-        
+            <div class="timer"></div>
+            <div class="level-count"></div>
+            <div class="strike-count"></div>
         </div>
-        <div class="strike-count">
-        
+        <div class="game">
+            <div class="game-block-1">
+                <!-- <img id="request-box" src="dist/assets/speech-bubble.png"> -->
+                <ul class="request"></ul>
+                <img id="dog" src="dist/assets/dog.png">
+            </div>
+            <div class="game-block-2">
+                <div class="key"></div>
+                <!-- <div class="break"></div> -->
+                <form id="input-form">
+                    <input type="text" id="string-input" name="value">
+                    <input type="submit" hidden>
+                </form>
+            </div>
         </div>
-        <div class="timer">
-        
-        </div>
-        </div>
-        <img src="dist/assets/dog.png">
-        <ul class="request">
-
-        </ul>
-        <div class="key">
-        
-        </div>
-        <form id="input-form">
-            <input type="text" id="string-input" name="value">
-            <input type="submit" hidden>
-        </form>
     </div>
     <!-- <div class="splash">
         <p class="instruction-header">INSTRUCTIONS</p>
