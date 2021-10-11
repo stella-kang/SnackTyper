@@ -183,6 +183,7 @@ body {
   background-color: #e05a00;
   color: #fff8e7;
   box-shadow: 10px 5px 5px #a9a9a9;
+  border-radius: 10px;
 }
 
 .game-start > h1, .game-over > * {
@@ -214,6 +215,7 @@ body {
   font-family: "Indie Flower", cursive;
   font-size: 20px;
   font-weight: bold;
+  border-radius: 10px;
 }
 
 #start-button > input {
