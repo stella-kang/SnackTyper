@@ -13,8 +13,8 @@ export default class Game {
         this.strikes = 0;
         this.timer = new Timer();
         this.intervalCallback = this.nextLevel.bind(this);
-        this.ms = 5000;
-        this.time = 5;
+        this.ms = 10000;
+        this.time = 10;
     }
 
     start() {

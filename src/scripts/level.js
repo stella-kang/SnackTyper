@@ -1,4 +1,4 @@
-const randomWord = require('random-words')
+import Dictionary from "./dictionary"
 
 export default class Level {
     constructor(num) {
@@ -13,8 +13,9 @@ export default class Level {
     buildStrings() {
         const result = [];
 
-        for (let i = 0; i < 6; i++) {
-            result.push(randomWord());
+        while (result.length < 6) {
+            let word = Dictionary[Math.floor(Math.random() * Dictionary.length)]
+            if (word.length < 10) result.push(word);
         }
         return result;
     }
