@@ -49,6 +49,11 @@ table {
 
 /* --- */
 
+html {
+    background-image: url("../dist/assets/snacktyper_bg.png");
+    background-repeat: repeat;
+}
+
 body {
     display: flex;
     justify-content: center;
