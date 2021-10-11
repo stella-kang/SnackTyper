@@ -1,28 +1,35 @@
 import Game from "./scripts/game"
 
 document.addEventListener("DOMContentLoaded", function() {
-    function startGame() {
-        let game = new Game();
-        game.render();
-        game.addListenerForStart();
-    }
-
-    startGame();
+    let game = new Game();
+    game.render();
+    game.addListenerForStart(); 
 
     const restart = document.querySelector("#restart-button")
-    debugger
     restart.addEventListener("click", e => {
         e.preventDefault();
 
-        let request = querySelector(".request")
-        let key = querySelector(".key")
-        for (let i = 0; i < request.length; i++) {
-            request[i].remove();
+        let request = document.querySelector(".request").children
+        let key = document.querySelector(".key").children
+        let requestLength = request.length;
+        let keyLength = key.length;
+        for (let i = 0; i < requestLength; i++) {
+            request[0].remove();
         }
-        for (let i = 0; i < key.length; i++) {
-            key[i].remove();
+        for (let i = 0; i < keyLength; i++) {
+            key[0].remove();
         }
-        debugger
-        startGame();
+
+        let gameOver = document.querySelector(".game-over");
+        gameOver.classList.add("hidden");
+        let board = document.querySelector(".game-board");
+        board.classList.remove("greyout");
+
+        let textInput = document.querySelector("#input-form");
+        textInput.removeEventListener("submit", game.inputEventCallback);
+        
+        game = new Game();
+        game.render();
+        game.start();
     })
 })

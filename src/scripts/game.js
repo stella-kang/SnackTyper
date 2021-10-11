@@ -36,12 +36,13 @@ export default class Game {
 
     addListenerForInput() {
         const input = document.querySelector("#input-form")
-        let that = this;
-        input.addEventListener("submit", e => {
+        
+        let eventCallback = e => {
             e.preventDefault();
             let val = e.target.elements.value.value
-            if (that.inputs.checkInput(val)) {
-                that.snacks.keys.forEach(el => {
+            debugger
+            if (this.inputs.checkInput(val)) {
+                this.snacks.keys.forEach(el => {
                     if (el[1] === val) {
                         let li = document.querySelector(`#${el[0]}`)
                         li.remove();
@@ -49,13 +50,17 @@ export default class Game {
                 })
             };
             document.querySelector("#string-input").value = '';
-            if (that.level.won()) {
-                clearInterval(that.eventTimer);
-                that.timer.reset();
-                that.eventTimer = setInterval(that.intervalCallback, 10000);
-                that.nextLevel();
+            if (this.level.won()) {
+                clearInterval(this.eventTimer);
+                this.timer.reset();
+                this.eventTimer = setInterval(this.intervalCallback, 10000);
+                this.nextLevel();
             }
-        })
+        }
+
+        this.inputEventCallback = eventCallback.bind(this);
+
+        input.addEventListener("submit", this.inputEventCallback)
     }
 
     nextLevel() {

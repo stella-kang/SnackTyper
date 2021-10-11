@@ -138,6 +138,7 @@ body {
 
 .key {
   display: flex;
+  flex-wrap: wrap;
   width: 68%;
   margin-left: 20px;
   /* flex-wrap: wrap; */
