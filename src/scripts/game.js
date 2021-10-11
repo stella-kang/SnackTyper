@@ -25,9 +25,10 @@ export default class Game {
         const startButton = document.querySelector("#start-button")
         const splash = document.querySelector(".game-start")
         const gameBoard = document.querySelector(".game-board")
+        let that = this;
         startButton.addEventListener("submit", e => {
             e.preventDefault();
-            this.start();
+            that.start();
             splash.classList.add("hidden");
             gameBoard.classList.remove("greyout");
         })
@@ -35,14 +36,24 @@ export default class Game {
 
     addListenerForInput() {
         const input = document.querySelector("#input-form")
+        let that = this;
         input.addEventListener("submit", e => {
             e.preventDefault();
-            this.inputs.checkInput(e.target.elements.value.value);
-            if (this.level.won()) {
-                clearInterval(this.eventTimer);
-                this.timer.reset();
-                this.eventTimer = setInterval(this.intervalCallback, 10000);
-                this.nextLevel();
+            let val = e.target.elements.value.value
+            if (that.inputs.checkInput(val)) {
+                that.snacks.keys.forEach(el => {
+                    if (el[1] === val) {
+                        let li = document.querySelector(`#${el[0]}`)
+                        li.remove();
+                    }
+                })
+                debugger
+            };
+            if (that.level.won()) {
+                clearInterval(that.eventTimer);
+                that.timer.reset();
+                that.eventTimer = setInterval(that.intervalCallback, 10000);
+                that.nextLevel();
             }
         })
     }
@@ -84,11 +95,6 @@ export default class Game {
         splash.classList.remove("hidden");
         let score = document.querySelector("#score")
         score.innerText = `Score: ${this.levelNum - 1}`
-    }
-
-    startGame() {
-        //add event listener for when player presses enter on splash
-        //make splash display: none;
     }
 
     render() {
