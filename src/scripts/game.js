@@ -13,6 +13,8 @@ export default class Game {
         this.strikes = 0;
         this.timer = new Timer();
         this.intervalCallback = this.nextLevel.bind(this);
+        this.ms = 5000;
+        this.time = 5;
     }
 
     start() {
@@ -23,8 +25,8 @@ export default class Game {
             el.classList.remove("greyout");
         })
 
-        this.eventTimer = setInterval(this.intervalCallback, 10000)
-        this.timer.start(10);
+        this.eventTimer = setInterval(this.intervalCallback, this.ms)
+        this.timer.start(this.time);
     }
 
     addListenerForStart() {
@@ -57,8 +59,8 @@ export default class Game {
             if (this.level.won()) {
                 clearInterval(this.eventTimer);
                 this.timer.reset();
-                this.eventTimer = setInterval(this.intervalCallback, 10000);
                 this.nextLevel();
+                this.eventTimer = setInterval(this.intervalCallback, this.ms);
             }
         }
 
@@ -74,6 +76,10 @@ export default class Game {
             this.strikes += 1;
         }
 
+        if (this.levelNum % 5 === 4) {
+            this.addTime();
+        }
+
         document.querySelector(".request").innerHTML = '';
         document.querySelector(".key").innerHTML = '';
         this.levelNum += 1
@@ -82,7 +88,7 @@ export default class Game {
         this.inputs = new Input(this.level);
         this.timer.reset();
         this.timer = new Timer();
-        this.timer.start(10);
+        this.timer.start(this.time);
         this.render();
 
         if (this.strikes === 3) {
@@ -123,5 +129,10 @@ export default class Game {
     renderLevel() {
         let counter = document.querySelector(".level-count")
         counter.innerHTML = `Level: ${this.levelNum}`
+    }
+
+    addTime() {
+        this.time += 5;
+        this.ms += 5000;
     }
 }

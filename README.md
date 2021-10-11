@@ -11,7 +11,6 @@ In **SnackTyper**, users will be able to:
 - Use the keyboard to input words
 - Track their score based on the amount of levels passed
 - Track the amount of chances they have left before losing the game
-- Play or pause optional background music, as well as adjust the volume
 
 In addition, the project will include:
 - An instructions view that describes the rules of the game
@@ -45,9 +44,10 @@ This project will be implemeneted with the following technologies:
 Some anticipated updates include:
 - Allowing the player to choose the animal that they would like to feed
 - Increase the timer for higher-level rounds for allow for elongated playability
+- Adding optional background music, with the ability to pause/play and adjust volume
 
 ## Music
-bedtime after a coffee by Barradeen | https://soundcloud.com/barradeen/
-Creative Commons Attribution-ShareAlike 3.0 Unported
-https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
-Music promoted by https://www.chosic.com/free-music/all/
+bedtime after a coffee by Barradeen | https://soundcloud.com/barradeen/ <br />
+Creative Commons Attribution-ShareAlike 3.0 Unported <br />
+https://creativecommons.org/licenses/by-sa/3.0/deed.en_US <br />
+Music promoted by https://www.chosic.com/free-music/all/ <br />
