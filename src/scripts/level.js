@@ -15,7 +15,7 @@ export default class Level {
 
         while (result.length < 6) {
             let word = Dictionary[Math.floor(Math.random() * Dictionary.length)]
-            if (word.length < 10) result.push(word);
+            if (word.length < 6) result.push(word);
         }
         return result;
     }
