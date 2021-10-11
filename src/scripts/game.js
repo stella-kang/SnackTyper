@@ -47,8 +47,8 @@ export default class Game {
                         li.remove();
                     }
                 })
-                debugger
             };
+            document.querySelector("#string-input").value = '';
             if (that.level.won()) {
                 clearInterval(that.eventTimer);
                 that.timer.reset();

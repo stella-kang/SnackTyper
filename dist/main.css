@@ -91,6 +91,7 @@ body {
   justify-content: space-between;
   font-size: 50px;
   margin: 10px 20px 40px 20px;
+  color: #3A3B3C;
 }
 
 .timer {
@@ -158,6 +159,7 @@ body {
 #string-input:focus {
   outline: 5px solid #e05a00;
   border: none;
+  initial-value: "";
 }
 
 /* .break {
