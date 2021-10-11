@@ -207,17 +207,17 @@ body > h1 {
     padding: 10px;
     color: #893101;
     border-radius: 10px;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .game-start > ul {
-    margin-top: 30px;
+    margin-top: 20px;
     line-height: 40px;
     background-color: #fff8e7;
     color: black;
     padding: 20px;
     font-family: 'Balsamiq Sans', cursive;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     border-radius: 10px;
 }
