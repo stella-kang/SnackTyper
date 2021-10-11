@@ -1,5 +1,7 @@
 # SnackTyper
 
+## <a href="https://stella-kang.github.io/Javascript-Project/">Game Page</a>
+
 ## Background
 **SnackTyper** is an snack-themed typing game where the player must feed the Shiba Inu in the alloted time by typing the words that match what is shown on the screen, based on the key provided. As the player progresses through the game, the amount of snacks requested will increase. The game will end when a user is unsuccessful in feeding the animal (by running out of time) more than three times.
 
@@ -9,6 +11,7 @@ In **SnackTyper**, users will be able to:
 - Use the keyboard to input words
 - Track their score based on the amount of levels passed
 - Track the amount of chances they have left before losing the game
+- Play or pause optional background music, as well as adjust the volume
 
 In addition, the project will include:
 - An instructions view that describes the rules of the game
@@ -42,7 +45,6 @@ This project will be implemeneted with the following technologies:
 Some anticipated updates include:
 - Allowing the player to choose the animal that they would like to feed
 - Increase the timer for higher-level rounds for allow for elongated playability
-- Include background music to help add to the player experience
 
 ## Music
 bedtime after a coffee by Barradeen | https://soundcloud.com/barradeen/
