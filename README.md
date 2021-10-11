@@ -1,7 +1,7 @@
 # SnackTyper
 
 ## Background
-**SnackTyper** is an snack-themed typing game where the player must feed the Shiba Inu in the alloted time by typing the words that match what is shown on the screen based on the key provided. As the player progresses through the game, the amount of snacks requested will becoming higher. The game will end when a user is unsuccessful in feeding the animal (by running out of time or inputing the wrong words) more than three times.
+**SnackTyper** is an snack-themed typing game where the player must feed the Shiba Inu in the alloted time by typing the words that match what is shown on the screen, based on the key provided. As the player progresses through the game, the amount of snacks requested will increase. The game will end when a user is unsuccessful in feeding the animal (by running out of time) more than three times.
 
 ## Functionality and MVPs
 In **SnackTyper**, users will be able to:
@@ -22,6 +22,8 @@ In addition, the project will include:
 - Nav Links will include a link to the project's Github repo, as well as a link to my LinkedIn profile
 - Level tracker will display a live tracker indicating how many levels the player has passed
 - Strike tracker will display a live tracker indicating how many times the player has failed a level
+- The Main Game Display will render the Shiba Inu, along with images of the snacks that must be matched for each level
+- The Game Key will render all of the unique sacks for the level, and their corresponding words
 - Text Input will be where the player is able to type the input for the main game functionality
 
 ## Technologies, Libraries, and APIs

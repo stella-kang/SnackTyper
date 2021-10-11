@@ -68,7 +68,7 @@ body {
   position: relative;
   align-items: center;
   font-family: "Sigmar One", cursive;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .hidden {
@@ -77,6 +77,13 @@ body {
 
 .greyout {
   opacity: 0.6;
+}
+
+body > h1 {
+  width: 100%;
+  font-size: 60px;
+  color: black;
+  text-align: center;
 }
 
 .game-board {
