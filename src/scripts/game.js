@@ -22,7 +22,7 @@ export default class Game {
         greyedElements.forEach(el => {
             el.classList.remove("greyout");
         })
-        
+
         this.eventTimer = setInterval(this.intervalCallback, 10000)
         this.timer.start(10);
     }
@@ -30,7 +30,6 @@ export default class Game {
     addListenerForStart() {
         const startButton = document.querySelector("#start-button")
         const splash = document.querySelector(".game-start")
-        debugger
         let that = this;
         startButton.addEventListener("submit", e => {
             e.preventDefault();
@@ -45,7 +44,7 @@ export default class Game {
         let eventCallback = e => {
             e.preventDefault();
             let val = e.target.elements.value.value
-            debugger
+
             if (this.inputs.checkInput(val)) {
                 this.snacks.keys.forEach(el => {
                     if (el[1] === val) {
@@ -74,14 +73,7 @@ export default class Game {
         } else {
             this.strikes += 1;
         }
-        // let requestChildren = document.querySelector(".request").children
-        // let keyChildren = document.querySelector(".key").children
-        // for (let i = 0; i < requestChildren.length; i++) {
-        //     requestChildren[0].remove();
-        // } 
-        // for (let i = 0; i < keyChildren.length; i++) {
-        //     keyChildren[0].remove();
-        // }
+
         document.querySelector(".request").innerHTML = '';
         document.querySelector(".key").innerHTML = '';
         this.levelNum += 1

@@ -9,7 +9,6 @@ export default class Timer{
         this.interval = setInterval(function() {
             document.querySelector(".timer").innerHTML = i;
             i--;
-            // debugger
         }, 1000);
     }
 
