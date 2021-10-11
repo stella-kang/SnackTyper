@@ -91,10 +91,15 @@ export default class Game {
     endGame() {
         clearInterval(this.eventTimer);
         this.timer.reset();
+
         let splash = document.querySelector(".game-over");
         splash.classList.remove("hidden");
-        let score = document.querySelector("#score")
-        score.innerText = `Score: ${this.levelNum - 1}`
+
+        let game = document.querySelector(".game-board");
+        game.classList.add("greyout");
+
+        let score = document.querySelector("#score");
+        score.innerText = `Score: ${this.levelNum - 1}`;
     }
 
     render() {
