@@ -24,13 +24,16 @@ export default class Game {
     addListenerForStart() {
         const startButton = document.querySelector("#start-button")
         const splash = document.querySelector(".game-start")
-        const gameBoard = document.querySelector(".game-board")
+        const greyedElements = document.querySelectorAll(".greyout")
+        debugger
         let that = this;
         startButton.addEventListener("submit", e => {
             e.preventDefault();
             that.start();
             splash.classList.add("hidden");
-            gameBoard.classList.remove("greyout");
+            greyedElements.forEach (el => {
+                el.classList.remove("greyout");
+            })
         })
     }
 
@@ -102,6 +105,9 @@ export default class Game {
 
         let game = document.querySelector(".game-board");
         game.classList.add("greyout");
+
+        let links = document.querySelector(".links")
+        links.classList.add("greyout");
 
         let score = document.querySelector("#score");
         score.innerText = `Score: ${this.levelNum - 1}`;

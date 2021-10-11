@@ -1,7 +1,7 @@
 # SnackTyper
 
 ## Background
-**SnackTyper** is an snack-themed typing game where the player must feed their animal in the alloted time by typing words that match what the animal is asking to eat. As the player progresses through the game, the words start to expand into longer sentences. The game will end when a user is unsuccessful in feeding the animal (by running out of time or inputing the wrong words) more than three times.
+**SnackTyper** is an snack-themed typing game where the player must feed the Shiba Inu in the alloted time by typing the words that match what is shown on the screen based on the key provided. As the player progresses through the game, the amount of snacks requested will becoming higher. The game will end when a user is unsuccessful in feeding the animal (by running out of time or inputing the wrong words) more than three times.
 
 ## Functionality and MVPs
 In **SnackTyper**, users will be able to:
