@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function() {
     game.render();
     game.addListenerForStart(); 
 
+    const music = document.querySelector("#background-music");
+    music.volume = 0.3;
+    music.autoplay = true;
+
     const restart = document.querySelector("#restart-button")
     restart.addEventListener("click", e => {
         e.preventDefault();

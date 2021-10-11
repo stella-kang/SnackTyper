@@ -15,12 +15,22 @@
 <body>
     <h1>SnackTyper</h1>
     <div class="links greyout">
-        <a href="https://github.com/stella-kang/Javascript-Project.git">
-            <img src="./dist/assets/github.png" alt="project-github-repo">
-        </a>
-        <a href="https://www.linkedin.com/in/stella-kang-33302b127/">
-            <img src="./dist/assets/linkedin.png" alt="linkedin-profile">
-        </a>
+        <audio id="background-music" loop src="./dist/assets/music.mp3"/></audio>
+        <div class="audio-controls">
+            <p>Music:</p>
+            <button class="play-pause" onclick="document.querySelector('#background-music').play()">Play</button>
+            <button class="play-pause" onclick="document.querySelector('#background-music').pause()">Pause</button>
+            <button onclick="document.querySelector('#background-music').volume += 0.1">Vol +</button>
+            <button onclick="document.querySelector('#background-music').volume -= 0.1">Vol -</button>
+        </div>
+        <div>
+            <a href="https://github.com/stella-kang/Javascript-Project.git">
+                <img src="./dist/assets/github.png" alt="project-github-repo">
+            </a>
+            <a href="https://www.linkedin.com/in/stella-kang-33302b127/">
+                <img src="./dist/assets/linkedin.png" alt="linkedin-profile">
+            </a>
+        </div>
     </div>
     <div class="game-board greyout">
         <div class="counters">

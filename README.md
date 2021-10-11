@@ -41,4 +41,11 @@ This project will be implemeneted with the following technologies:
 ## Bonus Features
 Some anticipated updates include:
 - Allowing the player to choose the animal that they would like to feed
+- Increase the timer for higher-level rounds for allow for elongated playability
 - Include background music to help add to the player experience
+
+## Music
+bedtime after a coffee by Barradeen | https://soundcloud.com/barradeen/
+Creative Commons Attribution-ShareAlike 3.0 Unported
+https://creativecommons.org/licenses/by-sa/3.0/deed.en_US
+Music promoted by https://www.chosic.com/free-music/all/

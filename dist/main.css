@@ -235,7 +235,8 @@ body > h1 {
 .links {
   display: flex;
   width: 70%;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .links img {
@@ -247,4 +248,21 @@ body > h1 {
   height: 70px;
   margin: 0px 0px 10px 15px;
   cursor: pointer;
+}
+
+.audio-controls button {
+  border: none;
+  font-family: "Sigmar One", cursive;
+  background-color: transparent;
+}
+
+.audio-controls button:hover {
+  background-color: #893101;
+  color: #fff8e7;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.play-pause:focus {
+  color: #e05a00;
 }
