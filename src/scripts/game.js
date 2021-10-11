@@ -55,12 +55,15 @@ export default class Game {
                     }
                 })
             };
+
             document.querySelector("#string-input").value = '';
+            
             if (this.level.won()) {
                 clearInterval(this.eventTimer);
                 this.timer.reset();
                 this.nextLevel();
                 this.eventTimer = setInterval(this.intervalCallback, this.ms);
+                debugger
             }
         }
 
@@ -76,12 +79,13 @@ export default class Game {
             this.strikes += 1;
         }
 
+        document.querySelector(".request").innerHTML = '';
+        document.querySelector(".key").innerHTML = '';
+
         if (this.levelNum % 5 === 4) {
             this.addTime();
         }
 
-        document.querySelector(".request").innerHTML = '';
-        document.querySelector(".key").innerHTML = '';
         this.levelNum += 1
         this.level = new Level(this.levelNum);
         this.snacks = new Snack(this.level);

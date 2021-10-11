@@ -24,8 +24,11 @@ document.addEventListener("DOMContentLoaded", function() {
             key[0].remove();
         }
 
-        let textInput = document.querySelector("#input-form");
-        textInput.removeEventListener("submit", game.inputEventCallback);
+        let form = document.querySelector("#input-form");
+        form.removeEventListener("submit", game.inputEventCallback);
+
+        let input = document.querySelector("#string-input")
+        input.value = "";
 
         let gameOver = document.querySelector(".game-over");
         gameOver.classList.add("hidden");
