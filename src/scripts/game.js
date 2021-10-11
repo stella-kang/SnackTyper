@@ -16,23 +16,33 @@ export default class Game {
     }
 
     start() {
-        this.render();
         this.addListenerForInput();
-        this.eventTimer = setInterval(this.intervalCallback, 1000)
-        this.timer.start(1);
+        this.eventTimer = setInterval(this.intervalCallback, 10000)
+        this.timer.start(10);
+    }
+
+    addListenerForStart() {
+        const startButton = document.querySelector("#start-button")
+        const splash = document.querySelector(".game-start")
+        const gameBoard = document.querySelector(".game-board")
+        startButton.addEventListener("submit", e => {
+            e.preventDefault();
+            this.start();
+            splash.classList.add("hidden");
+            gameBoard.classList.remove("greyout");
+        })
     }
 
     addListenerForInput() {
         const input = document.querySelector("#input-form")
-        let that = this;
         input.addEventListener("submit", e => {
             e.preventDefault();
-            that.inputs.checkInput(e.target.elements.value.value);
-            if (that.level.won()) {
-                clearInterval(that.eventTimer);
-                that.timer.reset();
-                that.eventTimer = setInterval(that.intervalCallback, 1000);
-                that.nextLevel();
+            this.inputs.checkInput(e.target.elements.value.value);
+            if (this.level.won()) {
+                clearInterval(this.eventTimer);
+                this.timer.reset();
+                this.eventTimer = setInterval(this.intervalCallback, 10000);
+                this.nextLevel();
             }
         })
     }
@@ -59,7 +69,7 @@ export default class Game {
         this.inputs = new Input(this.level);
         this.timer.reset();
         this.timer = new Timer();
-        this.timer.start(1);
+        this.timer.start(10);
         this.render();
 
         if (this.strikes === 3) {

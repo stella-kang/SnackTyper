@@ -2,7 +2,8 @@ import Game from "./scripts/game"
 
 document.addEventListener("DOMContentLoaded", function() {
     const game = new Game();
-    game.start();
+    game.render();
+    game.addListenerForStart();
 
     //add event listener to restart the game
 })

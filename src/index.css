@@ -173,30 +173,31 @@ body {
 
 .game-start > h1 {
     font-size: 45px;
+    margin-bottom: 40px;
 }
 
 .game-start > ul {
     margin-top: 30px;
     line-height: 40px;
     background-color: #fff8e7;
-    color: #b2560d;
+    color: black;
     padding: 20px;
     font-family: 'Indie Flower', cursive;
     font-size: 20px;
     font-weight: bold;
 }
 
-.game-start > button {
-    margin-top: 30px;
+#start-button > input {
+    margin-top: 20px;
     border: none;
     padding: 15px;
-    background-color: #fff8e7;
+    background-color: transparent;
+    color: #fff8e7;
     font-family: 'Sigmar One', cursive;
-    color: #3A3B3C;
-    font-size: 15px;
+    font-size: 25px;
+    text-align: center;
 }
 
-.game-start > button:hover {
-    background-color: #3A3B3C;
-    color: #fff8e7;
+#start-button > input:hover {
+    color: #3A3B3C;
 }
