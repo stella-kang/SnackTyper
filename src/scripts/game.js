@@ -82,7 +82,7 @@ export default class Game {
         document.querySelector(".request").innerHTML = '';
         document.querySelector(".key").innerHTML = '';
 
-        if (this.levelNum % 5 === 4) {
+        if (this.levelNum % 10 === 9) {
             this.addTime();
         }
 
