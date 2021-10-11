@@ -109,8 +109,13 @@ export default class Game {
         let links = document.querySelector(".links")
         links.classList.add("greyout");
 
+        let finalScore = this.levelNum-4
+
         let score = document.querySelector("#score");
-        score.innerText = `Score: ${this.levelNum - 1}`;
+        score.innerText = `Score: ${finalScore}`;
+
+        let rank = document.querySelector("#rank")
+        rank.innerText = `You're a ${finalScore < 10 ? "Novice Snacker" : finalScore < 20 ? "Intermediate Snacker" : finalScore < 30 ? "Super Snacker" : "Snack Attacker!"}`
     }
 
     render() {

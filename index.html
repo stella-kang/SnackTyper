@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Sigmar+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/index.css" type="text/css">
     <title>SnackTyper</title>
 </head>
@@ -56,15 +57,16 @@
     <div class="game-start">
         <h1>INSTRUCTIONS</h1>
         <ul class="instructions">
-            <li>- Feed the Shiba by typing up the words that match the snacks that they're asking for</li>
+            <li>- Feed the Shiba Inu by typing works in the bottom left corner, based on the snakcs that they're asking for</li>
+            <li>- If they ask for more than one of the same snack, you'll need to submit the word again!</li>
             <li>- The higher the level, the longer their request will be</li>
             <li>- You'll have 3 chances to feed them the right snacks within the time limit before the game is over</li>
         </br>
-            <ul>Based on your score, you can achieve the following rankings:
-                <li>1- 10 points: Novice Snacker</li>
-                <li>10 - 19 points: Intermediate Snacker</li>
-                <li>20 - 29 points: Super Snacker</li>
-                <li>30+: Snack Attacker!</li>
+            <ul class="ranking-description">Based on your score, you can achieve the following rankings:
+                <li>1 - 10 points - Novice Snacker</li>
+                <li>10 - 19 points - Intermediate Snacker</li>
+                <li>20 - 29 points - Super Snacker</li>
+                <li>30+ - Snack Attacker!</li>
                 <li></li>
             </ul>
         </ul>
@@ -75,6 +77,7 @@
     <div class="game-over hidden">
         <h1>Game Over!</h1>
         <p id="score"></p>
+        <p id="rank"></p>
         <button id="restart-button">Click Here to Play Again</button>
     </div>
 </body>
