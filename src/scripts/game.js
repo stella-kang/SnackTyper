@@ -17,6 +17,12 @@ export default class Game {
 
     start() {
         this.addListenerForInput();
+
+        const greyedElements = document.querySelectorAll(".greyout")
+        greyedElements.forEach(el => {
+            el.classList.remove("greyout");
+        })
+        
         this.eventTimer = setInterval(this.intervalCallback, 10000)
         this.timer.start(10);
     }
@@ -24,16 +30,12 @@ export default class Game {
     addListenerForStart() {
         const startButton = document.querySelector("#start-button")
         const splash = document.querySelector(".game-start")
-        const greyedElements = document.querySelectorAll(".greyout")
         debugger
         let that = this;
         startButton.addEventListener("submit", e => {
             e.preventDefault();
             that.start();
             splash.classList.add("hidden");
-            greyedElements.forEach (el => {
-                el.classList.remove("greyout");
-            })
         })
     }
 

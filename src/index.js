@@ -20,13 +20,11 @@ document.addEventListener("DOMContentLoaded", function() {
             key[0].remove();
         }
 
-        let gameOver = document.querySelector(".game-over");
-        gameOver.classList.add("hidden");
-        let board = document.querySelector(".game-board");
-        board.classList.remove("greyout");
-
         let textInput = document.querySelector("#input-form");
         textInput.removeEventListener("submit", game.inputEventCallback);
+
+        let gameOver = document.querySelector(".game-over");
+        gameOver.classList.add("hidden");
         
         game = new Game();
         game.render();
