@@ -52,10 +52,17 @@ table {
 body {
     display: flex;
     justify-content: center;
+    position: relative;
+    align-items: center;
+    font-family: 'Sigmar One', cursive;
 }
 
 .hidden {
     display: none;
+}
+
+.greyout {
+    opacity: 0.6;
 }
 
 .game-board {
@@ -75,7 +82,6 @@ body {
 .counters {
     display: flex;
     justify-content: space-between;
-    font-family: 'Sigmar One', cursive;
     font-size: 50px;
     margin: 10px 20px 40px 20px;
 
@@ -140,7 +146,7 @@ body {
     border: none;
     width: 300px;
     height: 40px;
-    margin-top: px;
+    margin-top: 20px;
     font-size: 30px;
     font-family: 'Indie Flower', cursive;
     padding: 10px;
@@ -155,3 +161,42 @@ body {
     flex-basis: 100%;
     height: 0;
 } */
+
+.game-start {
+    padding: 30px;
+    position: absolute;
+    text-align: center;
+    background-color: #e05a00;
+    color: #fff8e7;
+    box-shadow: 10px 5px 5px #a9a9a9;
+}
+
+.game-start > h1 {
+    font-size: 45px;
+}
+
+.game-start > ul {
+    margin-top: 30px;
+    line-height: 40px;
+    background-color: #fff8e7;
+    color: #b2560d;
+    padding: 20px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.game-start > button {
+    margin-top: 30px;
+    border: none;
+    padding: 15px;
+    background-color: #fff8e7;
+    font-family: 'Sigmar One', cursive;
+    color: #3A3B3C;
+    font-size: 15px;
+}
+
+.game-start > button:hover {
+    background-color: #3A3B3C;
+    color: #fff8e7;
+}

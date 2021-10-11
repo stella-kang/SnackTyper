@@ -61,16 +61,19 @@ export default class Game {
         this.timer = new Timer();
         this.timer.start(1);
         this.render();
-    }
 
-    gameOver() {
-        this.strikes === 3;
+        if (this.strikes === 3) {
+            this.endGame();
+        }
     }
 
     endGame() {
         clearInterval(this.eventTimer);
         this.timer.reset();
-        //render game over box
+        let splash = document.querySelector(".game-over");
+        splash.classList.remove("hidden");
+        let score = document.querySelector("#score")
+        score.innerText = `Score: ${this.levelNum - 1}`
     }
 
     startGame() {

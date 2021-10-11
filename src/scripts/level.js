@@ -25,7 +25,6 @@ export default class Level {
         while (this.answer.length < num) {
             this.answer.push(this.strings[Math.floor(Math.random() * this.strings.length)]);
         }
-        debugger
     }
 
     buildStrings() {
