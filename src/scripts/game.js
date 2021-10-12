@@ -77,6 +77,11 @@ export default class Game {
             this.score += 1;
         } else {
             this.strikes += 1;
+            let dog = document.querySelector("#dog");
+            dog.classList.add("animation")
+            setTimeout(() => {
+                dog.classList.remove("animation")
+            }, 500);
         }
 
         document.querySelector(".request").innerHTML = '';
@@ -119,7 +124,7 @@ export default class Game {
         score.innerText = `Score: ${finalScore}`;
 
         let rank = document.querySelector("#rank")
-        rank.innerText = `You're a ${finalScore < 10 ? "Novice Snacker" : finalScore < 20 ? "Intermediate Snacker" : finalScore < 30 ? "Super Snacker" : "Snack Attacker!"}`
+        rank.innerText = `You're a ${finalScore < 20 ? "Novice Snacker" : finalScore < 40 ? "Intermediate Snacker" : finalScore < 60 ? "Super Snacker" : "Snack Attacker!"}`
     }
 
     render() {

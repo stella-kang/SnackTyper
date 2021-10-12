@@ -8164,7 +8164,6 @@ const Dictionary = [
  "smudgy",
  "smug",
  "smugly",
- "smutty",
  "snack",
  "snafu",
  "snag",
