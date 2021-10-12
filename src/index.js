@@ -1,13 +1,13 @@
 import Game from "./scripts/game"
+import Music from "./scripts/music"
 
 document.addEventListener("DOMContentLoaded", function() {
     let game = new Game();
     game.render();
     game.addListenerForStart(); 
 
-    const music = document.querySelector("#background-music");
-    music.volume = 0.3;
-    music.autoplay = true;
+    let music = new Music();
+    music.addEventListeners();
 
     const restart = document.querySelector("#restart-button")
     restart.addEventListener("click", e => {
