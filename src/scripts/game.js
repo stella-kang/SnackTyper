@@ -135,7 +135,7 @@ export default class Game {
         score.innerText = `Score: ${finalScore}`;
 
         let rank = document.querySelector("#rank")
-        rank.innerText = `You're a ${finalScore < 10 ? "Novice Snacker" : finalScore < 20 ? "Intermediate Snacker" : finalScore < 30 ? "Super Snacker" : "Snack Attacker!"}`
+        rank.innerText = `You're a ${finalScore < 10 ? "Junior Snacker" : finalScore < 20 ? "Senior Snacker" : finalScore < 30 ? "Super Snacker" : "Snack Attacker!"}`
 
         const restart = document.querySelector("#restart-button")
         restart.addEventListener("click", e => {

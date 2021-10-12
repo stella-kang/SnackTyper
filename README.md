@@ -44,7 +44,7 @@ This project will be implemeneted with the following technologies:
 Some anticipated updates include:
 - Increase the timer for higher-level rounds for allow for elongated playability
 - Adding optional background music, with the ability to pause/play and adjust volume
-- Add animation to indicate when a strike was incurred
+- Add animation to indicate when a strike was incurred or an incorrect word has been submitted
 
 ## Music
 bedtime after a coffee by Barradeen | https://soundcloud.com/barradeen/ <br />
