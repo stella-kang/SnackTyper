@@ -13,8 +13,8 @@ export default class Game {
         this.strikes = 0;
         this.timer = new Timer();
         this.intervalCallback = this.nextLevel.bind(this);
-        this.ms = 10000;
-        this.time = 10;
+        this.ms = 5000;
+        this.time = 5;
     }
 
     start() {
@@ -124,7 +124,7 @@ export default class Game {
         score.innerText = `Score: ${finalScore}`;
 
         let rank = document.querySelector("#rank")
-        rank.innerText = `You're a ${finalScore < 20 ? "Novice Snacker" : finalScore < 40 ? "Intermediate Snacker" : finalScore < 60 ? "Super Snacker" : "Snack Attacker!"}`
+        rank.innerText = `You're a ${finalScore < 10 ? "Novice Snacker" : finalScore < 20 ? "Intermediate Snacker" : finalScore < 30 ? "Super Snacker" : "Snack Attacker!"}`
     }
 
     render() {
