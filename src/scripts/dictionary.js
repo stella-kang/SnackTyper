@@ -6777,8 +6777,6 @@ const Dictionary = [
  "psyche",
  "psycho",
  "pub",
- "pubes",
- "pubis",
  "public",
  "puce",
  "puck",
