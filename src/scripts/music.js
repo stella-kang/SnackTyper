@@ -2,7 +2,7 @@
 export default class Music {
     constructor() {
         this.music = document.querySelector("#background-music");
-        this.music.volume = 0.5;
+        this.music.volume = 0.1;
         this.volume = document.querySelector("#volume");
         this.toggle = document.querySelector("#play-toggle")
         this.playValue = false;

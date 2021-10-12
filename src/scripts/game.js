@@ -57,6 +57,12 @@ export default class Game {
                         li.remove();
                     }
                 })
+            } else {
+                const input = document.querySelector("#string-input");
+                input.classList.add("animation");
+                setTimeout(() => {
+                    input.classList.remove("animation")
+                }, 500);
             };
 
             document.querySelector("#string-input").value = '';
@@ -80,7 +86,7 @@ export default class Game {
             this.score += 1;
         } else {
             this.strikes += 1;
-            let dog = document.querySelector("#dog");
+            const dog = document.querySelector("#dog");
             dog.classList.add("animation")
             setTimeout(() => {
                 dog.classList.remove("animation")
