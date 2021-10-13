@@ -2847,7 +2847,6 @@ const Dictionary = [
  "ergot",
  "ermine",
  "erode",
- "erotic",
  "err",
  "errand",
  "errant",
