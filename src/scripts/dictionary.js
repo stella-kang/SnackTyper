@@ -276,7 +276,6 @@ const Dictionary = [
  "amuck",
  "amulet",
  "amuse",
- "anally",
  "analog",
  "anchor",
  "and",

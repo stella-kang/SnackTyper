@@ -19,7 +19,6 @@ export default class Game {
 
     start() {
         this.addListenerForInput();
-
         const greyedElements = document.querySelectorAll(".greyout")
         greyedElements.forEach(el => {
             el.classList.remove("greyout");
@@ -45,12 +44,11 @@ export default class Game {
 
     addListenerForInput() {
         const input = document.querySelector("#input-form")
-        
-        let eventCallback = e => {
+        debugger
+        let eventCallback = (e) => {
             e.preventDefault();
             let val = e.target.elements.value.value
             debugger
-
             if (this.inputs.checkInput(val)) {
                 this.snacks.keys.forEach(el => {
                     if (el[1] === val) {
