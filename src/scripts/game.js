@@ -12,7 +12,7 @@ export default class Game {
         this.score = 0;
         this.strikes = 0;
         this.timer = new Timer();
-        this.intervalCallback = this.nextLevel.bind(this);
+        this.timeoutCB = this.nextLevel.bind(this);
         this.ms = 10000;
         this.time = 10;
     }
@@ -27,7 +27,7 @@ export default class Game {
         let input = document.querySelector("#string-input")
         input.focus();
 
-        this.eventTimer = setInterval(this.intervalCallback, this.ms)
+        this.eventTimer = setTimeout(this.timeoutCB, this.ms)
         this.timer.start(this.time);
     }
 
@@ -44,11 +44,10 @@ export default class Game {
 
     addListenerForInput() {
         const input = document.querySelector("#input-form")
-        debugger
         let eventCallback = (e) => {
             e.preventDefault();
             let val = e.target.elements.value.value
-            debugger
+
             if (this.inputs.checkInput(val)) {
                 this.snacks.keys.forEach(el => {
                     if (el[1] === val) {
@@ -67,10 +66,9 @@ export default class Game {
             document.querySelector("#string-input").value = '';
 
             if (this.level.won()) {
-                clearInterval(this.eventTimer);
-                this.timer.reset();
+                clearTimeout(this.eventTimer);
+                this.eventTimer = null;
                 this.nextLevel();
-                this.eventTimer = setInterval(this.intervalCallback, this.ms);
             }
         }
 
@@ -105,17 +103,20 @@ export default class Game {
         this.timer.reset();
         this.timer = new Timer();
         this.timer.start(this.time);
-        this.render();
+        this.render(); 
 
         if (this.strikes === 3) {
             this.endGame();
+            this.timer.reset();
+            this.eventTimer = null;
+            return;
         }
+
+        this.eventTimer = null;
+        this.eventTimer = setTimeout(this.timeoutCB, this.ms);
     }
 
     endGame() {
-        clearInterval(this.eventTimer);
-        this.timer.reset();
-
         let splash = document.querySelector(".game-over");
         splash.classList.remove("hidden");
 
