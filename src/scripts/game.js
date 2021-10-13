@@ -49,6 +49,7 @@ export default class Game {
         let eventCallback = e => {
             e.preventDefault();
             let val = e.target.elements.value.value
+            debugger
 
             if (this.inputs.checkInput(val)) {
                 this.snacks.keys.forEach(el => {
@@ -66,18 +67,16 @@ export default class Game {
             };
 
             document.querySelector("#string-input").value = '';
-            
+
             if (this.level.won()) {
                 clearInterval(this.eventTimer);
                 this.timer.reset();
                 this.nextLevel();
                 this.eventTimer = setInterval(this.intervalCallback, this.ms);
-                debugger
             }
         }
 
         this.inputEventCallback = eventCallback.bind(this);
-
         input.addEventListener("submit", this.inputEventCallback)
     }
 
@@ -96,7 +95,6 @@ export default class Game {
         document.querySelector(".request").innerHTML = '';
         document.querySelector(".key").innerHTML = '';
         document.querySelector("#string-input").value = '';
-        debugger
 
         if (this.levelNum % 10 === 9) {
             this.addTime();
@@ -136,35 +134,6 @@ export default class Game {
 
         let rank = document.querySelector("#rank")
         rank.innerText = `You're a ${finalScore < 10 ? "Junior Snacker" : finalScore < 20 ? "Senior Snacker" : finalScore < 30 ? "Super Snacker" : "Snack Attacker!"}`
-
-        const restart = document.querySelector("#restart-button")
-        restart.addEventListener("click", e => {
-            e.preventDefault();
-
-            let request = document.querySelector(".request").children
-            let key = document.querySelector(".key").children
-            let requestLength = request.length;
-            let keyLength = key.length;
-            for (let i = 0; i < requestLength; i++) {
-                request[0].remove();
-            }
-            for (let i = 0; i < keyLength; i++) {
-                key[0].remove();
-            }
-
-            let form = document.querySelector("#input-form");
-            form.removeEventListener("submit", game.inputEventCallback);
-
-            let input = document.querySelector("#string-input")
-            input.value = "";
-
-            let gameOver = document.querySelector(".game-over");
-            gameOver.classList.add("hidden");
-
-            game = new Game();
-            game.render();
-            game.start();
-        })
     }
 
     render() {
