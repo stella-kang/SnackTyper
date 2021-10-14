@@ -67,7 +67,6 @@ export default class Game {
 
             if (this.level.won()) {
                 clearTimeout(this.eventTimer);
-                this.eventTimer = null;
                 this.nextLevel();
             }
         }
@@ -108,11 +107,9 @@ export default class Game {
         if (this.strikes === 3) {
             this.endGame();
             this.timer.reset();
-            this.eventTimer = null;
             return;
         }
 
-        this.eventTimer = null;
         this.eventTimer = setTimeout(this.timeoutCB, this.ms);
     }
 

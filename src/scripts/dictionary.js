@@ -7792,7 +7792,6 @@ const Dictionary = [
  "sewer",
  "sewing",
  "sewn",
- "sexily",
  "sexism",
  "sexist",
  "sextet",
