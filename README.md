@@ -1,6 +1,4 @@
-# SnackTyper
-
-## <a href="https://stella-kang.github.io/SnackTyper/">Game Page</a>
+# <a href="https://stella-kang.github.io/SnackTyper/">SnackTyper</a>
 
 ## Background
 **SnackTyper** is an snack-themed typing game where the player must feed the Shiba Inu within the alloted time by typing words that match the snacks that are shown on the screen. As the player progresses through the game, the amount of snacks requested will increase. The game will end when a user is unsuccessful in feeding the Shiba Inu (by running out of time) three times.
