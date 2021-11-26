@@ -272,19 +272,20 @@ body {
   align-items: center;
 }
 
-.links-div > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .links img {
   height: 50px;
-  margin: 10px 0px 10px 5px;
+}
+
+.links a {
+  margin: 10px 0px 10px 12px;
 }
 
 .links img:hover {
   cursor: pointer;
+}
+
+.links i {
+  color: black;
 }
 
 .audio-controls {
