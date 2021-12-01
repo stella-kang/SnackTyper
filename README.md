@@ -9,8 +9,43 @@ SnackTyper was implemented using vanilla Javascript and CSS3.
 
 ## Key Features
 
-### Splash
-When the game loads, users are greeted with a splash page with instructions on how to play the game. The splash also includes a music player with an adjustable volume feature, which is defaulted to be paused. Users have the option of having background music while playing the game.
+### Splash and Gameplay
+When the game loads, users are greeted with a splash page with instructions on how to play the game. The splash also includes a music player with an adjustable volume feature, which is defaulted to be paused. Users have the option of having background music while playing the game. Users will input words based on the requested snacks and the key provided. If the user inputs a match, then the snack associated with the word will be removed from the request area. The user will pass the level once all of the snacks have been removed.
+
+```
+    addListenerForInput() {
+        const input = document.querySelector("#input-form")
+        let eventCallback = (e) => {
+            e.preventDefault();
+            let val = e.target.elements.value.value
+
+            if (this.inputs.checkInput(val)) {
+                this.snacks.keys.forEach(el => {
+                    if (el[1] === val) {
+                        let li = document.querySelector(`#${el[0]}`)
+                        li.remove();
+                    }
+                })
+            } else {
+                const input = document.querySelector("#string-input");
+                input.classList.add("animation");
+                setTimeout(() => {
+                    input.classList.remove("animation")
+                }, 500);
+            };
+
+            document.querySelector("#string-input").value = '';
+
+            if (this.level.won()) {
+                clearTimeout(this.eventTimer);
+                this.nextLevel();
+            }
+        }
+
+        this.inputEventCallback = eventCallback.bind(this);
+        input.addEventListener("submit", this.inputEventCallback)
+    }
+```
 
 <img src="./dist/assets/js_gif1.gif" />
 
